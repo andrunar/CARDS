@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import Cards from './cards/cards';
 import './App.css';
 
+
 function App() {
+
+  const arrayInformation = [
+      {
+        name: 'Milanesa napolitana con fritas',
+        description: 'Milanesa de ternera rebozada con papas rusticas o fritas',
+        image: 'https://www.recetas360.com/wp-content/uploads/2022/09/como-hacer-milanesa-napolitana-receta-argentina.jpg',
+        price: '$2100'
+      },
+
+      {
+        name: 'Milanesa napolitana con fritas',
+        description: 'Milanesa de ternera rebozada con papas rusticas o fritas',
+        image: 'https://www.recetas360.com/wp-content/uploads/2022/09/como-hacer-milanesa-napolitana-receta-argentina.jpg',
+        price: '$2100'
+      },
+
+      {name: 'Milanesa napolitana con fritas',
+        description: 'Milanesa de ternera rebozada con papas rusticas o fritas',
+        image: 'https://www.recetas360.com/wp-content/uploads/2022/09/como-hacer-milanesa-napolitana-receta-argentina.jpg',
+        price: '$2100'},
+
+       { name: 'Milanesa napolitana con fritas',
+        description: 'Milanesa de ternera rebozada con papas rusticas o fritas',
+        image: 'https://www.recetas360.com/wp-content/uploads/2022/09/como-hacer-milanesa-napolitana-receta-argentina.jpg',
+        price: '$2100'},
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className='d-flex row g-0 grid gap-3 align-items-center justify-content-center'>
+      {
+      arrayInformation.map(comida => <Cards name={comida.name} description={comida.description} image={comida.image} price={comida.price}/>)
+      }
     </div>
   );
 }
