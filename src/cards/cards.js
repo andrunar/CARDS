@@ -1,6 +1,7 @@
 import React from 'react'
 import './cards.css'
 
+
 const Cards = ({name, description, image, price}) => {
   return (
     <>
@@ -17,7 +18,7 @@ const Cards = ({name, description, image, price}) => {
           </div>
         </div>
       </div>
-        <button className='d-flex align-items-end flex-column ms-auto me-2 mb-2 '><i class="bi bi-cart-plus"></i></button>
+        <button className='d-flex align-items-end flex-column ms-auto me-2 mb-2'><i class="bi bi-cart-plus"></i></button>
     </div>
     </>
   )

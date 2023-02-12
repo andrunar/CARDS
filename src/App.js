@@ -1,8 +1,12 @@
 import Cards from './cards/cards';
 import './App.css';
+import Login from './Login/login';
+
 
 
 function App() {
+
+
 
   const arrayInformation = [
       {
@@ -31,11 +35,16 @@ function App() {
   ]
 
   return (
-     <div className='d-flex row g-0 grid gap-3 align-items-center justify-content-center'>
+      <>
+        <Login />
+      <div className='d-flex row g-0 grid gap-3 align-items-center justify-content-center'>
       {
       arrayInformation.map(comida => <Cards name={comida.name} description={comida.description} image={comida.image} price={comida.price}/>)
       }
-    </div>
+      </div>
+    </>
+  
+  
   );
 }
 
