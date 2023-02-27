@@ -2,14 +2,13 @@ import React from 'react'
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Login = () => {
+const FormRegistro = () => {
 
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
-  console.log(data)
   
+  console.log(data)
   return (
-    <>
     <div>
       <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
         <div className="modal" id="exampleModal" aria-labelledby="exampleModalLabel" tabIndex="-1">
@@ -21,11 +20,19 @@ const Login = () => {
               <div className="modal-body ">
                 <div className="mb-3">
                 <label htmlFor="InputUsername1" className="form-label">Usuario</label>
-                <input {...register('usuario', {required: true, maxLength: 80})} type="text" className="form-control" id="InputUsername1" aria-describedby="emailHelp"/>
+                <input {...register('usuario', {required: true, maxLength: 80})} type="text" className="form-control" id="InputUsername1" aria-describedby="usernameHelp"/>
               </div>
               <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
-                <input {...register('password')} type="password" className="form-control" id="exampleInputPassword1" aria-describedby="emailHelp"/>
+                <label htmlFor="exampleInputName1" className="form-label">Nombre</label>
+                <input {...register('name')} type="text" className="form-control" id="exampleInputName1" aria-describedby="nameHelp"/>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputLastname1" className="form-label">Apellido</label>
+                <input {...register('lastname')} type="text" className="form-control" id="exampleInputLastname1" aria-describedby="LastnameHelp"/>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+                <input {...register('email')} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
               </div>
               <div className='text-center'>
               <label htmlFor="exampleInputEmail1" className="form-label">Olvidó su contraseña?</label>
@@ -38,12 +45,12 @@ const Login = () => {
         </div>
       </div>
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo login
+        Launch demo register
       </button>
-</form>
-</div>
-</>
+    </form>
+    </div>
   )
-}
 
-export default Login;
+    }
+
+export default FormRegistro
